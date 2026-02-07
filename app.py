@@ -69,4 +69,6 @@ def generate():
     return jsonify({"image": img_str})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    from waitress import serve
+    print("Starting server on port 7860...")
+    serve(app, host='0.0.0.0', port=7860)
